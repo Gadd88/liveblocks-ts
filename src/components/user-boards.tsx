@@ -1,9 +1,8 @@
-
 import { liveblocksClient } from '@/lib/liveblocksClient'
 import { getUserEmail } from '@/lib/userClient'
-import { redirect } from 'next/dist/server/api-utils'
 import Link from 'next/link'
 import React from 'react'
+import { FaTrashCan } from 'react-icons/fa6'
 
 export default async function UserBoards() {
     const userEmail = await getUserEmail()
@@ -12,12 +11,13 @@ export default async function UserBoards() {
     const {data: rooms} = await liveblocksClient.getRooms({
         userId: userEmail!
     })
+ 
   return (
-    <div className='my-4 grid md:grid-cols-4 gap-2'>
+    <div className='my-4 grid md:grid-cols-6 gap-2'>
         {
             rooms.length > 0 
             ? rooms.map(room => (
-                <Link key={room.id} href={`/boards/${room.id}`} className='rounded-md p-4 bg-slate-300 cursor-pointer hover:bg-lime-500 hover:text-white font-medium'>
+                <Link key={room.id} className='rounded-md p-4 bg-slate-300 cursor-pointer hover:bg-lime-500 hover:text-white font-medium relative min-h-20' href={`/boards/${room.id}`} >
                     {room.metadata.boardName}
                 </Link>
             )) 

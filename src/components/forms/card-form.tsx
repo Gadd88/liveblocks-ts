@@ -1,9 +1,10 @@
 'use client'
-import React, { FormEvent } from 'react'
+import React, { FormEvent, useRef } from 'react'
 import { ColumnType, useMutation } from '../../../liveblocks.config'
 import { LiveObject } from '@liveblocks/client'
 
 export const CardForm = ({columnId}:{columnId: ColumnType['id']}) => {
+    const formRef = useRef<HTMLFormElement | null>(null);
     const addCard = useMutation(({ storage }, cardName)=>{
         storage.get('cards').push(new LiveObject({
             name: cardName,
@@ -14,12 +15,16 @@ export const CardForm = ({columnId}:{columnId: ColumnType['id']}) => {
     },[columnId])
     const handleAddCard = (ev: FormEvent<HTMLFormElement>) => {
         ev.preventDefault()
+        if (formRef.current === null) {
+            return
+        }
         const formData = new FormData(ev.currentTarget)
         const cardName = formData.get('newCard')
         addCard(cardName)
+        formRef.current.reset()
     }
   return (
-    <form className='rounded max-w-sm flex items-center gap-1' onSubmit={handleAddCard}>
+    <form ref={formRef} className='rounded max-w-sm flex items-center gap-1' onSubmit={handleAddCard}>
         <input type="text" name="newCard" id="newCard" placeholder="Agregar tarjeta" className='block w-full p-2 border border-gray-300 rounded text-xs'/>
         <button type="submit" className='w-8 h-8 p-1 flex items-center justify-center font-normal'>+</button>
     </form>

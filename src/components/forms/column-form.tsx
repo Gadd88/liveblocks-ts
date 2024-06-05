@@ -1,9 +1,10 @@
 'use client'
-import React, { FormEvent } from 'react'
+import React, { FormEvent, useRef } from 'react'
 import { useMutation } from '../../../liveblocks.config'
 import { LiveObject } from '@liveblocks/client'
 
 export const ColumnForm = () => {
+    const formRef = useRef<HTMLFormElement | null>(null);
     const addColumn = useMutation(({ storage }, columnName)=>{
         storage.get('columns').push(new LiveObject({
             name: columnName,
@@ -13,16 +14,17 @@ export const ColumnForm = () => {
     },[])
     const handleAddColumn = (ev: FormEvent<HTMLFormElement>) => {
         ev.preventDefault()
-        const formData = new FormData(ev.currentTarget)
+        if (formRef.current === null) {
+            return;
+          }      
+        const formData = new FormData(formRef.current)
         const columnName = formData.get('newColumn')
         addColumn(columnName)
+        formRef.current.reset()
     }
   return (
-    <form className='rounded max-w-sm' onSubmit={handleAddColumn}>
+    <form ref={formRef} className='rounded max-w-sm' onSubmit={handleAddColumn}>
         <label htmlFor="newColumn" className="block mb-2 text-sm font-medium text-gray-600">
-            <span>
-                Nombre de columna
-            </span>
             <input type="text" name="newColumn" id="newColumn" placeholder="Agregar columna" className='block w-full p-2 mt-1 border border-gray-300 rounded'/>
         </label>
         <button type="submit" className='mt-2 block w-full'>Crear columna</button>
