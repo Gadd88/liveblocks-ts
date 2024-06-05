@@ -1,11 +1,13 @@
 
 import { liveblocksClient } from '@/lib/liveblocksClient'
 import { getUserEmail } from '@/lib/userClient'
+import { redirect } from 'next/dist/server/api-utils'
 import Link from 'next/link'
 import React from 'react'
 
 export default async function UserBoards() {
     const userEmail = await getUserEmail()
+    if(!userEmail) return
     //obtenemos y extraemos los datos de los tableros usando el email del usuario y los renombramos como "rooms"
     const {data: rooms} = await liveblocksClient.getRooms({
         userId: userEmail!

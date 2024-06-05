@@ -24,7 +24,6 @@ export default async function Home() {
           <span>Crea un nuevo tablero</span>
           <FaChevronRight className="h-4"/>
       </Link>
-      <Board />
     </div>
   );
 }

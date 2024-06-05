@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import { ReactSortable } from "react-sortablejs";
 import { CardType, ColumnType, useMutation, useStorage } from "../../liveblocks.config";
 import { shallow } from "@liveblocks/client";
