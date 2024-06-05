@@ -10,7 +10,7 @@ export default async function BoardPage({params}: {params: {boardId: string}}) {
     
   return (
     <div>
-        Board: {boardInfo.metadata.boardName}
+        <h1 className='text-2xl md:text-4xl text-end'>Tablero:<span className='bg-black text-white px-2'>{boardInfo.metadata.boardName}</span></h1>
         <Board id={boardId}/>
     </div>
   )

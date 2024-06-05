@@ -5,9 +5,9 @@ import { CardType, ColumnType, useMutation, useStorage } from "../../liveblocks.
 import { LiveList, LiveObject, shallow } from "@liveblocks/client";
 import { CardForm } from "./forms/card-form";
 import { FaTrashCan } from 'react-icons/fa6'
+import { CardItem } from "./card-item";
 
 export const Column = ({ column }: { column: ColumnType } ) => {
-
     const columnCards = useStorage<CardType[]>(root => {
         return root.cards
           .filter(card => card.columnId === column.id)
@@ -49,9 +49,11 @@ export const Column = ({ column }: { column: ColumnType } ) => {
   if(!columnCards) return
 
   return (
-    <div className="min-w-36 bg-white shadow-sm rounded-md p-2 flex flex-col justify-between relative pt-5">
-      <div className="absolute -top-1 -right-1 bg-red-500 p-1 rounded-full cursor-pointer text-white w-5 h-5 flex items-center hover:bg-black justify-center" onClick={()=>deleteCol(column.id)}><FaTrashCan className="w-full h-full"/></div>
-      <h3>{column.name}</h3>
+    <div className="bg-white shadow-sm rounded-md p-2 flex flex-col justify-between relative pt-5 max-w-80 columnItem">
+      <div className="absolute -top-1 -right-1 bg-red-500 p-1 rounded-full cursor-pointer text-white w-5 h-5 flex items-center hover:bg-black justify-center" onClick={()=>deleteCol(column.id)}>
+        <FaTrashCan className="w-full h-full"/>
+      </div>
+      <h3 className="text-lg font-medium text-center bg-black text-white">{column.name}</h3>
       {
         columnCards &&
         <ReactSortable
@@ -63,10 +65,7 @@ export const Column = ({ column }: { column: ColumnType } ) => {
         ghostClass="opacity-40"
         >
                 {columnCards.map((card) => (
-                  <div key={card.id} className="border my-2 p-4 rounded-md cursor-default relative w-[96%]">
-                    <span>{card.name}</span>
-                    <div className="absolute top-1/2 bottom-1/2 my-auto -right-2 bg-gray-500 p-1 rounded-full cursor-pointer text-white w-5 h-5 flex items-center justify-center"><FaTrashCan className="w-full h-full"/></div>
-                  </div>
+                  <CardItem key={card.id} card={card} />
                 ))}
             </ReactSortable>
       }

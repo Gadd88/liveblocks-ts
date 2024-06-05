@@ -6,7 +6,7 @@ body{
   background-color: #e6e7eb;
 }
 
-::-webkit-scrollbar{
+.columnItem ::-webkit-scrollbar{
   display: none;
 }
 

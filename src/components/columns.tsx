@@ -25,21 +25,23 @@ export default function Columns() {
     }
     if(!columns) return
   return (
-    <div className="flex justify-start items-start gap-4 mt-4">
+    <div className="flex justify-start items-start gap-4 mt-4 overflow-x-auto flex-col pb-10">
       <ColumnForm />
-      <ReactSortable
-        group="columns"
-        className='flex gap-4'
-        ghostClass='opacity-40'
-        list={columns}
-        setList={updateColumnsOrder}>
-          {columns.map((column) => (
-              <Column
-                  key={column.id}
-                  column={column}
-                  />
-          ))}
-      </ReactSortable>
+      <div className='flex justify-start items-start gap-4'>
+        <ReactSortable
+          group="columns"
+          className='flex gap-4'
+          ghostClass='opacity-40'
+          list={columns}
+          setList={updateColumnsOrder}>
+            {columns.map((column) => (
+                <Column
+                    key={column.id}
+                    column={column}
+                    />
+            ))}
+        </ReactSortable>
+      </div>
     </div>
   )
 }
