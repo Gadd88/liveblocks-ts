@@ -2,7 +2,6 @@ import { liveblocksClient } from '@/lib/liveblocksClient'
 import { getUserEmail } from '@/lib/userClient'
 import Link from 'next/link'
 import React from 'react'
-import { FaTrashCan } from 'react-icons/fa6'
 
 export default async function UserBoards() {
     const userEmail = await getUserEmail()
