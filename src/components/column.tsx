@@ -49,11 +49,11 @@ export const Column = ({ column }: { column: ColumnType } ) => {
   if(!columnCards) return
 
   return (
-    <div className="bg-white shadow-sm rounded-md p-2 flex flex-col justify-between relative pt-5 max-w-80 columnItem">
+    <div className="bg-white shadow-sm rounded-md p-2 flex flex-col justify-between relative pt-5 max-w-80 w-72 columnItem">
       <div className="absolute -top-1 -right-1 bg-red-500 p-1 rounded-full cursor-pointer text-white w-5 h-5 flex items-center hover:bg-black justify-center" onClick={()=>deleteCol(column.id)}>
         <FaTrashCan className="w-full h-full"/>
       </div>
-      <h3 className="text-lg font-medium text-center bg-black text-white">{column.name}</h3>
+      <h3 className="text-lg font-medium text-center bg-black px-2 py-2 text-white">{column.name}</h3>
       {
         columnCards &&
         <ReactSortable

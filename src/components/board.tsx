@@ -6,16 +6,18 @@ import { useRouter } from "next/navigation";
 import { FaTrashCan } from "react-icons/fa6";
 import { RoomProvider } from "../../liveblocks.config";
 import Columns from "./columns";
+import { ReactNode } from "react";
 
-export const Board = ({ id }: { id: string }) => {
+type BoardProps = {
+  id: string;
+}
 
+export const Board:React.FC<BoardProps> = ({ id }):ReactNode => {
   const router = useRouter()
-  
   const deleteBoard = async (id: string) =>{
     await liveblocksClient.deleteRoom(id)
     router.push('/')
   }
-  if(!id) return router.push('/')
   return (
     <RoomProvider 
         id={id} 

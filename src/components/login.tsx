@@ -8,7 +8,7 @@ import { LoginButton } from "./login-button"
 export const Login = () => {
 
   return (
-    <div className="w-full pt-8 text-center flex items-center justify-center max-w-5xl mx-auto">
+    <div className="w-full pt-6 text-center flex items-center justify-center max-w-5xl mx-auto">
         <article className="w-1/2 flex items-center justify-center rounded-md">
             <Image src='/boards.svg' alt='boads image' height={500} width={500} />
         </article>
@@ -29,7 +29,7 @@ export const Login = () => {
                 <LoginButton />
                 <button 
                     type='button' 
-                    className="w-fit font-normal bg-gray-300 text-slate-800"
+                    className="w-fit font-normal bg-gray-300 text-slate-800 hover:text-white"
                     >
                         Registrarse
                 </button>
