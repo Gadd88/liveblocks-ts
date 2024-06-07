@@ -3,6 +3,7 @@
 import { signIn } from "next-auth/react"
 import Image from "next/image"
 import { LoginButton } from "./login-button"
+import Link from "next/link"
 
 // bg-clip-text text-transparent
 export const Login = () => {
@@ -26,7 +27,7 @@ export const Login = () => {
                 </p>
             </div>
             <div className="flex flex-col md:flex-row justify-center items-center gap-5">
-                <LoginButton />
+                <Link className="btn bg-gradient-to-bl from-[#008793] to-[#a8eb12] text-white font-medium px-4 py-2 inline-flex gap-2 items-center rounded-md min-w-32 justify-center" href='/login'>Login</Link>
                 <button 
                     type='button' 
                     className="w-fit font-normal bg-gray-300 text-slate-800 hover:text-white"
