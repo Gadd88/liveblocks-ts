@@ -12,7 +12,8 @@
     "signInWith": "Sign in with"
   }, 
 
-  "RegisterForm": { 
+  "RegisterForm": {
+  "title":"Registration", 
   "fullName": "Full Name",
   "mail": "Email",
   "password": "Password",
@@ -25,6 +26,22 @@
   "password": "Password",
   "signIn": "Sign In"
   
+ },
+
+ "Boards":{
+  "title": "Your Boards",
+  "createBoard": "Create New Board"
+ },
+ "Header":{
+  "salute": "Hi!",
+  "logout": "Log out",
+  "login":"Sing In with"
+ },
+ "new-board":{
+  "title": "Create your new board",
+  "label": "Name of the board",
+  "placeholder": "Shopping list",
+  "createBtn": "Create board"
  }
 
 }

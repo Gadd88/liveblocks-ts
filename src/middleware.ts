@@ -16,5 +16,5 @@ export default createMiddleware({
 });
  
 export const config = {
-  matcher: ['/', '/(es|en)/:path*', '/register', '/login' ]
+  matcher: ['/', '/(es|en)/:path*', '/register', '/login', '/new-board', '/boards', '/boards/:path*' ]
 };

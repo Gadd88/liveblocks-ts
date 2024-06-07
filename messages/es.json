@@ -12,6 +12,7 @@
   },
 
   "RegisterForm": {
+    "title":"Regístrate",
     "fullName": "Nombre Completo",
     "mail": "Correo Electrónico",
     "password": "Contraseña",
@@ -24,5 +25,20 @@
     "password": "Contraseña",
     "signIn": "Iniciar Sesión"
     
+   },
+   "Boards":{
+    "title": "Tus tableros",
+    "createBoard": "Crea un nuevo tablero"
+   },
+   "Header":{
+    "salute": "Hola!",
+    "logout":"Salir",
+    "login":"Iniciar sesión con"
+   },
+   "new-board":{
+    "title": "Crea tu nuevo tablero",
+    "label": "Nombre del tablero",
+    "placeholder": "Lista de tareas",
+    "createBtn": "Crear tablero"
    }
 }

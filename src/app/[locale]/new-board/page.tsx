@@ -1,6 +1,7 @@
 'use client'
 
 import { createBoard } from "@/actions/boardActions"
+import { useTranslations } from "next-intl"
 import { redirect } from "next/navigation"
 
 export default function NewBoardPage() {
@@ -11,17 +12,17 @@ export default function NewBoardPage() {
             alert('No se pudo crear el tablero')
         }
         redirect(`/boards/${boardInfo.id}`)  
-        
     }
+    const t = useTranslations('new-board')
     return (
         <div>
-            <h1 className="text-2xl mb-4">Crea tu nuevo tablero</h1>
+            <h1 className="text-2xl mb-4">{t('title')}</h1>
             <form className="max-w-xs space-y-5 mt-5" action={handleNewBoard}>
                 <label htmlFor="boardName">
-                    Nombre del tablero
-                    <input type="text" name="boardName" id="boardName" placeholder="Nombre del tablero" />
+                    {t('label')}
+                    <input type="text" name="boardName" id="boardName" placeholder={t('placeholder')} />
                 </label>
-                <button type="submit">Crear tablero</button>
+                <button type="submit">{t('createBtn')}</button>
             </form>
         </div>
     )
