@@ -1,17 +1,12 @@
-'use client'
-
-import { signIn } from "next-auth/react"
 import Image from "next/image"
-import { LoginButton } from "./login-button"
 import Link from "next/link"
 
 // bg-clip-text text-transparent
-export const Login = () => {
-
+export const HomeView = () => {
   return (
-    <div className="w-full pt-6 text-center flex items-center justify-center max-w-5xl mx-auto">
-        <article className="w-1/2 flex items-center justify-center rounded-md">
-            <Image src='/boards.svg' alt='boads image' height={500} width={500} />
+    <div className="w-full pt-6 text-center flex flex-col md:flex-row items-center justify-center max-w-5xl mx-auto">
+        <article className="w-full md:w-1/2 flex items-center justify-center rounded-md">
+            <Image src='/boards.svg' alt='boads image' height={500} width={500} className="max-w-full h-auto" />
         </article>
         <article className="flex flex-col space-y-5 items-center w-1/2 p-5 gap-5">
             <h1 className="text-center text-2xl md:text-4xl">
@@ -28,12 +23,12 @@ export const Login = () => {
             </div>
             <div className="flex flex-col md:flex-row justify-center items-center gap-5">
                 <Link className="btn bg-gradient-to-bl from-[#008793] to-[#a8eb12] text-white font-medium px-4 py-2 inline-flex gap-2 items-center rounded-md min-w-32 justify-center" href='/login'>Login</Link>
-                <button 
+                <Link href='/register' 
                     type='button' 
-                    className="w-fit font-normal bg-gray-300 text-slate-800 hover:text-white"
+                    className="w-fit font-normal bg-gray-300 text-slate-800 hover:text-white py-2 px-2 rounded-md"
                     >
                         Registrarse
-                </button>
+                </Link>
             </div>
         </article>
     </div>

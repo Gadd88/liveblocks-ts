@@ -1,5 +1,5 @@
 import { Board } from "@/components/board";
-import { Login } from "@/components/login";
+import { HomeView } from "@/components/home-view";
 import UserBoards from "@/components/user-boards";
 import { authOptions } from "@/lib/authOptions";
 import { getServerSession } from "next-auth";
@@ -11,7 +11,7 @@ export default async function Home() {
   const session = await getServerSession(authOptions)
   if(!session){
     return (
-      <Login/>
+      <HomeView/>
     )
   }
   return (
