@@ -1,0 +1,28 @@
+{
+  "Home": {
+    "welcome": "Bienvenido a",
+    "description1": "Con TaskEase, puedes crear y gestionar tus tareas de manera eficiente. Personaliza completamente tu experiencia añadiendo, editando y eliminando columnas según tus necesidades.",
+    "description2": "Colabora con tu equipo en tiempo real, compartiendo listas de tareas y asignando responsabilidades. Todo esto, en una interfaz intuitiva y fácil de usar, diseñada para mejorar tu productividad y mantenerte enfocado en lo que realmente importa.",
+    "loginPrompt": "Ingresa con tu cuenta o Regístrate en nuestra base de datos",
+    "login": "Login", 
+    "register": "Registrarse"
+  },
+  "Login": {
+    "signInWith": "Ingresa con"
+  },
+
+  "RegisterForm": {
+    "fullName": "Nombre Completo",
+    "mail": "Correo Electrónico",
+    "password": "Contraseña",
+    "password2": "Reingresa Contraseña",
+    "registerButton": "Registrarse"
+  },
+
+  "LoginForm":{
+    "email": "Correo Electrónico",
+    "password": "Contraseña",
+    "signIn": "Iniciar Sesión"
+    
+   }
+}

@@ -2,8 +2,10 @@
 
 import { signIn } from "next-auth/react"
 import { useRouter } from "next/navigation"
+import { useTranslations } from "next-intl"
 
 export function LoginForm() {
+    const t = useTranslations('LoginForm');
     const router = useRouter()
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
@@ -46,15 +48,15 @@ export function LoginForm() {
   return (
     <form onSubmit={handleSubmit} className="flex flex-col space-y-5 w-full max-w-lg">
         <div className="flex flex-col space-y-3">
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">{t('email')}</label>
             <input type="email" name="email" id="email" className="border-none"/>
         </div>
         <div className="flex flex-col space-y-3">
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password">{t('password')}</label>
             <input type="password" name="password" id="password" className="border-none"/>
         </div>
         <div className="flex flex-col space-y-3">
-            <input type="submit" value="Ingresar" className="bg-lime-500 text-white font-medium text-center rounded-lg py-4 cursor-pointer hover:bg-lime-700" />
+            <input type="submit" value={t('signIn')} className="bg-lime-500 text-white font-medium text-center rounded-lg py-4 cursor-pointer hover:bg-lime-700" />
         </div>
     </form>
   )

@@ -1,0 +1,30 @@
+{
+  "Home": {
+    "welcome": "Welcome to",
+    "description1": "With TaskEase, you can create and manage your tasks efficiently. Fully customize your experience by adding, editing, and deleting columns as needed.",
+    "description2": "Collaborate with your team in real-time, sharing task lists and assigning responsibilities. All this, in an intuitive and easy-to-use interface, designed to improve your productivity and keep you focused on what really matters.",
+    "loginPrompt": "Login with your account or Register in our database",
+    "login": "Login",
+    "register": "Register"
+  },
+
+ "Login": {
+    "signInWith": "Sign in with"
+  }, 
+
+  "RegisterForm": { 
+  "fullName": "Full Name",
+  "mail": "Email",
+  "password": "Password",
+  "password2": "Re-enter Password",
+  "registerButton": "Register"
+},
+
+ "LoginForm":{
+  "email": "Email",
+  "password": "Password",
+  "signIn": "Sign In"
+  
+ }
+
+}
